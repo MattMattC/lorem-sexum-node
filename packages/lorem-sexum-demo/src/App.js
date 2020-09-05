@@ -1,30 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { generateFromNbWords } from '@lorem-sexum/node';
 
-console.log('generateFromNbWords', generateFromNbWords);
+import './App.css';
+import Header from './layout/Header';
+import { theme, ThemeProvider, CSSReset, Box } from '@chakra-ui/core';
+import Generator from './Generator';
+
+const breakpoints = ['360px', '768px', '1024px', '1440px'];
+breakpoints.sm = breakpoints[0];
+breakpoints.md = breakpoints[1];
+breakpoints.lg = breakpoints[2];
+breakpoints.xl = breakpoints[3];
+
+const newTheme = {
+    ...theme,
+    breakpoints,
+};
 
 function App() {
-    const test = generateFromNbWords(30);
-    console.log( test);
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <ThemeProvider theme={newTheme}>
+            <CSSReset />
+            <Header />
+            <Box p={4}>
+                <Generator />
+            </Box>
+        </ThemeProvider>
     );
 }
 

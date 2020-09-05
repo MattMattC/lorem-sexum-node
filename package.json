@@ -3,5 +3,8 @@
     "version": "1.0.0",
     "description": "lorem-ipsum for sex in french first",
     "main": "index.js",
-    "license": "MIT"
+    "license": "MIT",
+    "scripts" : {
+        "demo" : "lerna run start --scope \"@lorem-sexum/demo\""
+    }
 }
