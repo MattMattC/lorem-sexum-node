@@ -11,7 +11,6 @@ import {
     useClipboard,
 } from '@chakra-ui/core';
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import {
     generateFromNbWords,
@@ -19,7 +18,7 @@ import {
 } from '@lorem-sexum/node';
 
 function Generator() {
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const [generatorType, setGeneratorType] = React.useState('words');
     const [result, setResult] = useState('');
     const { onCopy, hasCopied } = useClipboard(
@@ -40,6 +39,8 @@ function Generator() {
             // TODO : faire la distinction entre paragraph et vraies phrases
             case 'paragraphs':
                 objects = generateByParagraphNumber(data.nbParagraph);
+                break;
+            default:
                 break;
         }
         setResult(objects);
@@ -62,7 +63,6 @@ function Generator() {
                                 Number of words
                             </FormLabel>
                             <Input
-                                ref={register}
                                 name="nbWords"
                                 id="nbWords"
                                 type="number"
@@ -99,7 +99,6 @@ function Generator() {
                             Number of Paragrah
                         </FormLabel>
                         <Input
-                            ref={register}
                             name="nbParagraph"
                             id="nbParagraph"
                             type="number"
@@ -111,8 +110,8 @@ function Generator() {
                     </FormControl>
                 ) : null}
 
-                <Button type="submit" mt={4} variantColor="teal" type="submit">
-                    Generate pleasure 💦
+                <Button type="submit" mt={4} variantColor="teal">
+                    Generate pleasure <span role="img" aria-label="hum">💦</span>
                 </Button>
                 {result ? (
                     <Button onClick={onCopy} mt={4}>
