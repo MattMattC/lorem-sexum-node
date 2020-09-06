@@ -28,5 +28,5 @@ jobs:
           - run : npm run build
           - run : git config --global user.email "roadfen@gmail.com"
           - run : git config --global user.name "MattMatt"
-          - run : USE_SSH=true npm run publish-gh-pages
+          - run : USE_SSH=true npm run publish
             working-directory: ${{env.working-directory}}/build

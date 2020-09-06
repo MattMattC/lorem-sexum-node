@@ -7,6 +7,7 @@
     "scripts": {
         "demo": "lerna run start --scope \"@lorem-sexum/demo\"",
         "build": "lerna run build --scope \"@lorem-sexum/demo\"",
+        "publish-demo": "lerna run publish --scope \"@lorem-sexum/demo\"",
         "bootstrap": "lerna bootstrap"
     },
     "dependencies": {
