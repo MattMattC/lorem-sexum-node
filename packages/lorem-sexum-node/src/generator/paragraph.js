@@ -35,6 +35,7 @@ const generateByParagraphNumber = (paragraphNumber) => {
         sentences.forEach((sentence) => {
             stringFinal += ' ' + buildSentenceString(buildFromOrder(sentence));
         });
+        stringFinal += '\n\n';
         paragraphs.push(stringFinal);
     }
     return paragraphs;

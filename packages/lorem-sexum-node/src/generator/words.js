@@ -13,28 +13,14 @@ const generateFromNbWords = (
     ipsumMode = false,
     wordLists = null
 ) => {
-    const words = [];
-    let beginSentenceLenth = 0;
+    let words = [];
+
+    let beginSentenceList = []
     if (beginSentence !== null && beginSentence.trim().length > 0) {
-        words.push(beginSentence);
-        beginSentenceLenth = beginSentence.trim().split(' ').length;
+        beginSentenceList = beginSentence.trim().split(' ');
+        nbWords -= beginSentenceList.length;
+        words = [...beginSentenceList];
     }
-
-    /**
-     *
-     * @param {int} list
-     */
-    const random = (list) => {
-        return Math.floor(Math.random() * Math.floor(list.length));
-    };
-
-    /**
-     *
-     * @param {int} max
-     */
-    const randomMax = (max) => {
-        return Math.floor(Math.random() * Math.floor(max));
-    };
 
     /**
      * Get True of False
@@ -49,7 +35,7 @@ const generateFromNbWords = (
     };
 
     // add punctuation
-    const result = CombinationSum([7, 8, 9, 10], nbWords);
+    const result = CombinationSum([5, 7, 8, 9, 10], nbWords + beginSentenceList.length);
     // TODO : ici le but est de choisir le resultat qui a le plus de
     // valeurs différentes genre (7 7 8 9) au lieu de 7 7 7 7
     // pour ensuite le mélanger pour avoir les phrases.
@@ -61,8 +47,7 @@ const generateFromNbWords = (
 
     //     })
     // })
-
-    for (let i = 0; i < nbWords - beginSentenceLenth; i++) {
+    for (let i = 0; i < nbWords; i++) {
         words.push(
             ListTool.getRandomInList(
                 wordLists
@@ -77,12 +62,13 @@ const generateFromNbWords = (
     // Add punctuation ?
     let counterStart = 0;
     let counterEnd = 0;
+    
     for (let i = 0; i < result[0].length; i++) {
         counterStart += i === 0 ? 0 : result[0][i - 1];
         counterEnd += result[0][i];
 
         words[counterEnd - 1] = words[counterEnd - 1] + '.';
-        if (randomBoolean(100)) {
+        if (randomBoolean(60)) {
             const randomComa = Math.floor((counterEnd - counterStart) / 2);
 
             if (counterStart + randomComa < counterEnd) {

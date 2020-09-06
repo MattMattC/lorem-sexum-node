@@ -1,5 +1,4 @@
 import { ListTool, StringTool, CombinationSum } from './tools';
-import { generateFromNbWords } from './generator';
-console.log(generateFromNbWords);
+import { generateFromNbWords, generateByParagraphNumber } from './generator';
 
-export { ListTool, StringTool, CombinationSum, generateFromNbWords };
+export { ListTool, StringTool, CombinationSum, generateFromNbWords, generateByParagraphNumber };

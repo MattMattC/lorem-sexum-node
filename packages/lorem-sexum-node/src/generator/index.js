@@ -1,3 +1,4 @@
 import { generateFromNbWords } from './words';
-console.log('test', generateFromNbWords)
-export { generateFromNbWords };
+import { generateByParagraphNumber } from './paragraph';
+
+export { generateFromNbWords, generateByParagraphNumber };
