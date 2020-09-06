@@ -8,6 +8,12 @@ Lorem Sexum is a sex oriented lorem ipsum generator for fun. For the moment, the
 Example : 
 - sexe ➡️ sexus
 
+## Demo
+
+[Demo]([https://link](https://mattmattc.github.io/lorem-sexum-node/))
+
+> The demo is created with React and Chakra Ui with my hands ! 🖐
+
 ## Why ? 
 
 ???? FUN ? 
