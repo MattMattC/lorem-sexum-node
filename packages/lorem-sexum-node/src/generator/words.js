@@ -14,7 +14,7 @@ const generateFromNbWords = (
     wordLists = null
 ) => {
     let words = [];
-
+    nbWords = ~~nbWords;
     let beginSentenceList = []
     if (beginSentence !== null && beginSentence.trim().length > 0) {
         beginSentenceList = beginSentence.trim().split(' ');

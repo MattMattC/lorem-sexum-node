@@ -5,6 +5,7 @@
     "main": "index.js",
     "license": "MIT",
     "scripts" : {
-        "demo" : "lerna run start --scope \"@lorem-sexum/demo\""
+        "demo" : "lerna run start --scope \"@lorem-sexum/demo\"",
+        "build": "lerna run build --scope \"@lorem-sexum/demo\""
     }
 }
