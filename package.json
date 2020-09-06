@@ -6,7 +6,8 @@
     "license": "MIT",
     "scripts": {
         "demo": "lerna run start --scope \"@lorem-sexum/demo\"",
-        "build": "lerna run build --scope \"@lorem-sexum/demo\""
+        "build": "lerna run build --scope \"@lorem-sexum/demo\"",
+        "bootstrap": "lerna bootstrap"
     },
     "dependencies": {
         "lerna": "^3.22.1"

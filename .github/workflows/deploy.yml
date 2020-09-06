@@ -24,7 +24,7 @@ jobs:
               known_hosts: ${{ secrets.KNOWN_HOSTS }}
               name: id_rsa
           - run : npm install
-          - run : lerna bootstrap
+          - run : npm run bootstrap
           - run : npm run build
           - run : git config --global user.email "roadfen@gmail.com"
           - run : git config --global user.name "MattMatt"
