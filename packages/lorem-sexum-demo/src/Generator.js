@@ -113,11 +113,7 @@ function Generator() {
                 <Button type="submit" mt={4} variantColor="teal">
                     Generate pleasure <span role="img" aria-label="hum">💦</span>
                 </Button>
-                {result ? (
-                    <Button onClick={onCopy} mt={4}>
-                        {hasCopied ? 'Copied' : 'Copy'}
-                    </Button>
-                ) : null}
+              
             </form>
             {result ? (
                 <Box mt="4" p="4" borderWidth="1px" rounded="lg">
@@ -132,6 +128,11 @@ function Generator() {
                     ) : (
                         <Text>{result}</Text>
                     )}
+                      {result ? (
+                    <Button onClick={onCopy} mt={4}>
+                        {hasCopied ? 'Copied' : 'Copy'}
+                    </Button>
+                ) : null}
                 </Box>
             ) : null}
         </div>
